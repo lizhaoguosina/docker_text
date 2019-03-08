@@ -1,467 +1,87 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>网站管理系统</title>
-<meta content="" name="description">
-<meta content="" name="keywords">
-<link href="/templets/img/default.css" rel="stylesheet" type="text/css">
-<link href="../img/default.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="/include/dedeajax2.js"></script>
-<script language="JavaScript">
-function CheckLogin(){
-var taget_obj = document.getElementById('_loginform');
-myajax = new DedeAjax(taget_obj,false,false,"","","");
-myajax.SendGet("/member/loginsta.php");
-}
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><!--This file has been created with freemind2html.xsl--><head><title>SQL Injections</title><link rel="stylesheet" href="index.html_files/freemind2html.css" type="text/css"/><meta name="generator" content="FreeMind-XSL Stylesheet (see: http://freemind-xsl.dev.slash-me.net/ for details)"/><script type="text/javascript" src="index.html_files/freemind2html.js">聽 
+	</script><script type="text/javascript"><!--
+          
+               function toggle(id)
+               {
+                   div_el = document.getElementById(id);
+                   img_el = document.getElementById('img'+id);
+                   if (div_el.style.display != 'none')
+                   {
+          
+					
+                      div_el.style.display='none';
+                      img_el.src = 'index.html_files/show.png';
+          
+                   }
+                   else
+                   {
+          
+                      div_el.style.display='block';
+                      img_el.src = 'index.html_files/hide.png';
+          
+                   };
+               };
+          
+          -->
 </script>
 </head>
-<body leftmargin="0" topmargin="0">
-<center>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" class="tbspan">
-<tr> 
-<td width="190" height="68" align="center"><a href='http://www.dedecms.com' target='_blank'><img src="/templets/img/df_dedetitle.gif" width="178" height="53" border='0' alt="dedecms织梦内容管理系统"></a></td>
-<td width="20" align="center">&nbsp;</td>
-<td width="486">&nbsp;</td>
-<td width="190" align="center">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr align="center" height="20"> 
-<td height="24"><a href="/plus/sitemap.html">网站地图</a></td>
-<td><a href="/plus/rssmap.html">RSS订阅</a></td>
-</tr>
-<tr align="center" height="20"> 
-<td><a href="/plus/heightsearch.php">高级搜索</a></td>
-<td><a href='#' onClick="javascript:window.external.AddFavorite('http://_','网站管理系统');">收藏本站</a></td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" class="tbspan">
-<tr> 
-<td width="10" height="36" background="/templets/img/31bg1.gif"><img src="/templets/img/31c1.gif" width="9" height="36"></td>
-<td width="880" background="/templets/img/31bg1.gif"> 
-<a href='/'>首页</a>  | <a href='/html/test/index.html'>test</a> 
- 
-| <a href="/special/index.php">专题</a>
-| <a href="http://bbs.dedecms.com" style="color:red">支持论坛</a>
-| <a href="/member">会员中心</a> </td>
-<td width="10" align="right" background="/templets/img/31bg1.gif"><img src="/templets/img/31c2.gif" width="9" height="36"></td>
-</tr>
-</table>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" class="tbspan">
-<tr> 
-<td width="10" height="32" background="/templets/img/31bg2.gif"><img src="/templets/img/31c3.gif" width="4" height="32"></td>
-<td width="508" background="/templets/img/31bg2.gif">
-<div class="hotworddiv">热门关键字：</div>
-</td>
-<td width="372" align="center" background="/templets/img/31bg2.gif"> 
-<form action="/plus/search.php" name="formsearch">
-<input type="hidden" name="kwtype" value="0">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr> 
-<td width="47%"><input name="keyword" type="text" id="keyword" class="kw1"></td>
-<td width="30%" align="center"> <select name="select" id="searchtype" class="op1">
-<option value="titlekeyword" selected>智能模糊搜索</option>
-<option value="title">仅搜索标题</option>
-</select> </td>
-<td width="23%" align="center"> <input name="imageField2" type="image" src="/templets/img/v31s.gif" width="73" height="19" border="0"></td>
-</tr>
-</table>
-</form></td>
-<td width="10" align="right" background="/templets/img/31bg2.gif"><img src="/templets/img/31c4.gif" width="4" height="32"></td>
-</tr>
-</table>
-<table width="900" border="0" cellspacing="0" cellpadding="0">
-<tr> 
-<td width="222" valign='top' bgcolor='#EAF2E5' background='/templets/img/ibg.gif'> 
-<!--Split-->
-<table width="100%" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td height="7" background="/templets/img/ic1.gif" style="font-size:1px">&nbsp;</td>
-</tr>
-</table>
-<table width="96%" align="center" cellpadding="0" cellspacing="0">
-<tr> 
-<td height="24"><img src="/templets/img/login.gif" width="105" height="25"></td>
-</tr>
-<tr> 
-<td height="4"></td>
-</tr>
-</table>
-<!--Split-->
-<table width="96%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#BCC1B3">
-<tr> 
-<td valign="top" bgcolor="#FFFFFF"> 
-			<!-- 
-			本模板使用Ajax技术判断用户是否登录，如果你改动了模板，
-			必须指定id=loginform 的区域作为返回内容
-			-->
-			<span id="_loginform">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<form name='form1' method='POST' action='/member/index_do.php'>
-<input type="hidden" name="fmdo" value="login">
-<input type="hidden" name="dopost" value="login">
-<input type="hidden" name="gourl" value="">
-<tr> 
-<td height="28"> </td>
-<td width="30%">用户名：</td>
-<td width="63%"><input name="userid" type="text" id="userid" style="width:120px;height:20px;border:1px solid #cccccc"></td>
-</tr>
-<tr> 
-<td height="28"></td>
-<td>密　码：</td>
-<td><input type="pwd" name="pwd" style="width:120px;height:20px;border:1px solid #cccccc"></td>
-</tr>
-<tr> 
-<td height="28"> </td>
-<td>验证码：</td>
-<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="50%"><input name="vdcode" type="text" id="vdcode" style="width:60px;height:20px;border:1px solid #cccccc"></td>
-<td><img name="vdcode" src="/include/validateimg.php" width="50" height="20" alt=""></td>
-</tr>
-</table></td>
-</tr>
-<tr> 
-<td width="4%" height="57"> </td>
-<td height="57" colspan="2" align="center"> 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="50%" align="center"> 
-<input name="imageField" type="image" src="/templets/img/loginbt.gif" width="75" height="28" border="0">
-</td>
-<td> <a href="/member/index_do.php?fmdo=user&dopost=regnew"><img src="/templets/img/regbt.gif" width="75" height="28" border="0"></a> 
-</td>
-</tr>
-</table></td>
-</tr>
-</form>
-</table>
-</span>
-<script language="JavaScript">CheckLogin();</script>
-</td>
-</tr>
-</table>
-<!--Split-->
-<table width="96%" align="center" cellpadding="0" cellspacing="0">
-<tr> 
-<td height="4" colspan="2"></td>
-</tr>
-<tr> 
-<td width="15%" height="24" align="right"><img src="/templets/img/sdd.gif" width="13" height="13"></td>
-<td width="85%" style="padding-left:6px;letter-spacing:3px;color:#7BAF5F"><strong>推荐文档</strong></td>
-</tr>
-<tr> 
-<td height="2" colspan="2"></td>
-</tr>
-</table>
-<!--Split-->
-<table width="96%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#BCC1B3">
-<tr> 
-<td valign="top" bgcolor="#FFFFFF">
-	&nbsp;
-</td>
-</tr>
-</table>
-<!--Split-->
-<table width="96%" align="center" cellpadding="0" cellspacing="0">
-<tr> 
-<td height="4" colspan="2"></td>
-</tr>
-<tr> 
-<td width="15%" height="24" align="right"><img src="/templets/img/sdd.gif" width="13" height="13"></td>
-<td width="85%" style="padding-left:6px;letter-spacing:3px;color:#7BAF5F"><strong>热点文档</strong></td>
-</tr>
-<tr> 
-<td height="2" colspan="2"></td>
-</tr>
-</table>
-<!--Split-->
-<table width="96%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#BCC1B3">
-<tr> 
-<td valign="top" bgcolor="#FFFFFF">
-	·<a href="/html/test/20190305/1.html">test</a><br/>
+<body>
+<h1><a id="fm_main" href="#fm_imagemap"><font color="#FF0040">SQLi-LABS  Page-1<i>(Basic Challenges)</i></font></a></h1>
+<a href="sql-connections/setup-db.php"><font color="#E4287C">Setup/reset Database for labs</font></a></br></br>
+<a href="index-1.html"><font color="##F535AA">Page-2  (Advanced Injections)</font></a><br><br>
+<a href="index-2.html"><font color="#008000">Page-3  (Stacked Injections)</font></a><br><br>
+<a href="index-3.html"><font color="#FF00FF">Page-4  (Challenges)</font></a>
 
-</td>
-</tr>
-</table>
-<!--Split-->
-<table width="100%">
-<tr> 
-<td height="4"></td>
-</tr>
-</table>
-<!--Split-->
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr> 
-<td align="center">
-	<table width='96%' border='0' cellspacing='1' cellpadding='1' bgcolor='#9A8F70'>
-<form name='voteform' method='post' action='/plus/vote.php' target='_blank'>
-<input type='hidden' name='dopost' value='send'>
-<input type='hidden' name='aid' value='1'>
-<input type='hidden' name='ismore' value='0'>
-<tr align='center'><td height='24' bgcolor='#EDEDE2' >你是从哪儿得知本站的？</td></tr>
-<tr><td height=24 bgcolor=#FFFFFF><input type='radio' name='voteitem' value='1'>朋友介绍</td></tr>
-<tr><td height=24 bgcolor=#FFFFFF><input type='radio' name='voteitem' value='2'>门户网站的搜索引擎</td></tr>
-<tr><td height=24 bgcolor=#FFFFFF><input type='radio' name='voteitem' value='3'>Google或百度搜索</td></tr>
-<tr><td height=24 bgcolor=#FFFFFF><input type='radio' name='voteitem' value='4'>别的网站上的链接</td></tr>
-<tr><td height=24 bgcolor=#FFFFFF><input type='radio' name='voteitem' value='5'>其它途径</td></tr>
-<tr><td height='24' bgcolor='#FFFFFF'>
-<input type='submit' style='width:40;background-color:#EDEDE2;border:1px soild #818279' name='vbt1' value='投票'>
-<input type='button' style='width:80;background-color:#EDEDE2;border:1px soild #818279' name='vbt2' value='查看结果' onClick="window.open('/plus/vote.php?dopost=view&aid=1');"></td></tr>
-</form>
-</table>
-
-</td>
-</tr>
-</table>
-
-</td>
-<td width="8"> </td>
-<td valign="top" width="670">
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr> 
-<td height="28"> 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px solid #CDCDCD">
-<tr> 
-<td height="6"></td>
-<td width="119" rowspan="2" align="center" bgcolor="#FFFFFF" class="indt1"><strong>【编辑导读】</strong></td>
-<td width="524"></td>
-</tr>
-<tr> 
-<td width="27" height="24" align="center" bgcolor="#EDEDCD"> 
-</td>
-<td valign="bottom" bgcolor="#EDEDCD">&nbsp;</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr> 
-<td width="98%" height="365" valign="top">
-	<table width="100%" border="0" cellspacing="1" cellpadding="0">
-<tr> 
-<td colspan="3" height="2"></td>
-</tr>
-<tr> 
-<td width="25%" height="108" valign="top" align="center">
-<script language='javascript'>
-linkarr = new Array();
-picarr = new Array();
-textarr = new Array();
-var focus_width=165;
-var focus_height=120;
-var text_height=24;
-var pics = "";
-var links = "";
-var texts = "";
-var swf_height = focus_height+text_height;
-var defJpeg = "/plus/img/jpeg.jpg";
-
-
-
-for(i=1;i<picarr.length;i++)
-{
-if(pics=="") pics = picarr[i];
-else{
-	if(picarr[i].indexOf("jpg")==-1 && picarr[i].indexOf("JPG")==-1) picarr[i] = defJpeg;
-	pics += "|"+picarr[i];
-}
-}
-for(i=1;i<linkarr.length;i++)
-{
-if(links=="") links = linkarr[i];
-else links += "|"+linkarr[i];
-}
-for(i=1;i<textarr.length;i++)
-{
-if(texts=="") texts = textarr[i];
-else texts += "|"+textarr[i];
-}
-document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
-document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="/templets/img/slide.swf">');
-document.write('<param name="quality" value="high"><param name="bgcolor" value="#ffffff">');
-document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
-document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');
-document.write('<embed src="/templets/img/slide.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" bgcolor="#ffffff" quality="high" width="'+ focus_width +'" height="'+ focus_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
-document.write('</object>');
-</script>
-					 </td>
-<td width="49%" valign="top" style="padding-left:6px"> 
-				<table width="100%" border="0" cellspacing="1" cellpadding="1">
-					<tr height="22">
-<td width="85%" class="indl1">[<a href='/html/test/index.html'>test</a>] <a href="/html/test/20190305/1.html">test</a></td>
-<td width="15%" align="right" class="indl1">03-05</td>
-</tr>
-
-</table>
-					 </td>
-<td width="26%" align="center"><img src="/templets/img/ddd.jpg" width="158" height="124"></td>
-</tr>
-</table>
-<table width="100%" border="0" cellspacing="1" cellpadding="0">
-<tr> 
-<td colspan="2">
-	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
-<tr> 
-<td height="24" valign="top">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px solid #CDCDCD">
-<tr> 
-<td height="4"></td>
-<td width="119" rowspan="2" align="center" bgcolor="#FFFFFF" class='indt2'><strong>【图片文档】</strong></td>
-<td width="524"></td>
-</tr>
-<tr> 
-<td width="27" height="22" align="center" bgcolor="#F2F4D2"> 
-</td>
-<td valign="bottom" bgcolor="#F2F4D2">&nbsp;</td>
-</tr>
-</table></td>
-</tr>
-<tr> 
-<td height="80" valign="top"> 
-<!--img infolist-->
-<table width='100%' border='0' cellspacing='0' cellpadding='0'>
-<tr>
-	<td width='34%'>
-	</td>
-	<td width='34%'>
-	</td>
-	<td width='34%'>
-	</td>
-	</tr>
-	</table>
- 
-<!--img infolist-->
-</td>
-</tr>
-<tr> 
-<td height="100" valign="top">
-	<table width='100%' border='0' cellspacing='0' cellpadding='0'>
-<tr>
-	<td width='50%' valign='top'>
- 
-<table width="99%" border="0" cellpadding="3" cellspacing="1" bgcolor="#E1EBD3" style="margin-bottom:3px">
-<tr> 
-<td height="26" bgcolor="#E6F2CC" background="/templets/img/indbg1i.gif"> 
- 
-<table border="0" cellpadding="0" cellspacing="0" width="98%">
-<tr> 
-<td width='10%' align="center"><img src='/templets/img/channellist.gif' width='14' height='16'></td>
-<td width='60%'> <a href="/html/test/index.html">test</a> </td>
-<td width='30%' align='right'><a href="/html/test/index.html"><img src="/templets/img/more.gif" width="43" height="14" border="0"></a></td>
-</tr>
-</table>
- </td>
-</tr>
-<tr> 
-<td height="50" valign="top" bgcolor="#FFFFFF"> 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-								<tr>
-<td width="75%" height="22" class="inddline">
-									·<a href="/html/test/20190305/1.html">test</a>
-									</td>
-<td width="25%" class="inddline">2019-03-05</td>
-</tr>
-
-								</table></td>
-</tr>
-</table>
-	</td>
-	<td width='50%' valign='top'>
-	</td>
-	</tr>
-	</table>
- </td>
-</tr>
-</table></td>
-</tr>
-</table></td>
-</tr>
-<tr> 
-<td height="2"></td>
-</tr>
-</table></td>
-</tr>
-	<tr>
-<td valign='top' height="7" bgcolor='#EAF2E5' background='/templets/img/ibg.gif'><table width="100%" align="center" cellpadding="0" cellspacing="0">
-<tr> 
-<td height="7" background="/templets/img/ic2.gif" style="font-size:1px">&nbsp;</td>
-</tr>
-</table></td>
-<td></td>
-<td bgcolor="#E8E8BD" style="font-size:1px">&nbsp;</td>
-</tr>
-</table>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:3px;margin-bottom:6px;">
-<tr align="center"> 
-<td height="20" bgcolor="#F5F5F5" align='right'> 本站只接受PR>4的网站作首链接，其它放在内页 
-<a href='/plus/flink.php'>[所有链接]</a> <a href='/plus/flink-add.php'>[申请链接]</a> 
-</td>
-</tr>
-<tr> 
-<td height="3"></td>
-</tr>
-<tr> 
-<td>
-<table width=100% border=0 bgcolor=#cccccc cellspacing=1 cellpadding=1><tr bgcolor='#FFFFFF' height='20'>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr bgcolor='#FFFFFF' height='20'>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr bgcolor='#FFFFFF' height='20'>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr bgcolor='#FFFFFF' height='20'>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
-</td>
-</tr>
-<tr> 
-<td height="3"></td>
-</tr>
-<tr align="center"> 
-<td height="8" bgcolor="#F5F5F5"></td>
-</tr>
-</table>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" class="tbspan" style="margin-top:3px">
-<tr> 
-<td height="51" background="/templets/img/31bg5.gif" valign="top"><img src='/templets/img/31c5.gif' width='4' height='49'></td>
-
-<td background="/templets/img/31bg5.gif" align="center">
-	<a href=http://www.dedecms.com target=_blank>Power by DedeCms</a>
-</td>
-
-<td background="/templets/img/31bg5.gif" align="right" valign="top"><img src='/templets/img/31c6.gif' width='4' height='49'></td>
-</tr>
-</table>
-
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" class="tbspan">
-<tr><td height="6"></td></tr>
-</table> 
-</center></body></html>
+<div style="width:96%;  padding:2%;  margin-bottom:10px;  border: 0px;  text-align:center;  vertical-align:center;">
+<img src="index.html_files/image.png" style="margin-bottom:10px; &#9;border: 0px; &#9;text-align:center; &#9;vertical-align:center;" alt="Imagemap" usemap="#fm_imagemap"/>
+</div>
+<map name="fm_imagemap" id="fm_imagemap">
+<area shape="rect" href="#fm_main" alt="SQL Injections" title="SQL Injections" coords="506,663,614,701" />
+<area shape="rect" href="Less-2" alt="Less-2" title="Less-2" coords="594,418,666,438" />
+<area shape="rect" href="Less-2" alt="GET - Error based - Intiger based" title="GET - Error based - Intiger based" coords="686,438,923,458" />
+<area shape="rect" href="Less-4" alt="Less - 4" title="Less - 4" coords="613,468,693,488" />
+<area shape="rect" href="Less-4" alt="GET - Error based - Double Quotes - Stri ..." title="GET - Error based - Double Quotes - Stri ..." coords="708,492,1004,512" />
+<area shape="rect" href="Less-1" alt="Less-1" title="Less-1" coords="448,420,520,440" />
+<area shape="rect" href="Less-1" alt="GET - Error based - Single quotes - Stri ..." title="GET - Error based - Single quotes - Stri ..." coords="139,444,428,464" />
+<area shape="rect" href="Less-3" alt="Less - 3" title="Less - 3" coords="427,472,507,492" />
+<area shape="rect" href="Less-3" alt="GET - Error based - Single quotes with t ..." title="GET - Error based - Single quotes with t ..." coords="60,498,410,518" />
+<area shape="rect" href="Less-6" alt="Less - 6" title="Less - 6" coords="625,515,705,535" />
+<area shape="rect" href="Less-6" alt="GET - Double Injection - Double Quotes - ..." title="GET - Double Injection - Double Quotes - ..." coords="722,539,1045,559" />
+<area shape="rect" href="Less-5" alt="Less - 5" title="Less - 5" coords="423,525,503,545" />
+<area shape="rect" href="Less-5" alt="GET - Double Injection - Single Quotes - ..." title="GET - Double Injection - Single Quotes - ..." coords="86,553,403,573" />
+<area shape="rect" href="Less-8" alt="Less - 8" title="Less - 8" coords="629,565,709,585" />
+<area shape="rect" href="Less-8" alt="GET - Blind - Boolian Based - Single Quo ..." title="GET - Blind - Boolian Based - Single Quo ..." coords="730,597,1028,617" />
+<area shape="rect" href="Less-7" alt="Less - 7" title="Less - 7" coords="414,576,494,596" />
+<area shape="rect" href="Less-7" alt="GET - Dump into outfile - String" title="GET - Dump into outfile - String" coords="174,606,398,626" />
+<area shape="rect" href="Less-10" alt="Less - 10" title="Less - 10" coords="630,625,718,645" />
+<area shape="rect" href="Less-10" alt="GET - Blind - Time based - double quotes" title="GET - Blind - Time based - double quotes" coords="736,655,1021,675" />
+<area shape="rect" href="Less-9" alt="Less - 9" title="Less - 9" coords="412,632,492,652" />
+<area shape="rect" href="Less-9" alt="GET - Blind - Time based. -  Single Quot ..." title="GET - Blind - Time based. -  Single Quot ..." coords="107,662,396,682" />
+<area shape="rect" href="Less-12" alt="Less - 12" title="Less - 12" coords="628,686,716,706" />
+<area shape="rect" href="Less-12" alt="POST - Error Based - Double quotes- Stri ..." title="POST - Error Based - Double quotes- Stri ..." coords="736,724,1105,744" />
+<area shape="rect" href="Less-11" alt="Less - 11" title="Less - 11" coords="405,698,493,718" />
+<area shape="rect" href="Less-11" alt="POST - Error Based - Single quotes- Stri ..." title="POST - Error Based - Single quotes- Stri ..." coords="93,720,386,740" />
+<area shape="rect" href="Less-14" alt="Less - 14" title="Less - 14" coords="639,749,727,769" />
+<area shape="rect" href="Less-14" alt="POST - Double Injection - Single quotes- ..." title="POST - Double Injection - Single quotes- ..." coords="750,787,1140,807" />
+<area shape="rect" href="Less-13" alt="Less - 13" title="Less - 13" coords="410,752,498,772" />
+<area shape="rect" href="Less-13" alt="POST - Double Injection - Single quotes- ..." title="POST - Double Injection - Single quotes- ..." coords="0,778,390,798" />
+<area shape="rect" href="Less-16" alt="Less - 16" title="Less - 16" coords="632,814,720,834" />
+<area shape="rect" href="Less-16" alt="POST - Blind- Boolian/Time Based - Doubl ..." title="POST - Blind- Boolian/Time Based - Doubl ..." coords="740,842,1080,862" />
+<area shape="rect" href="Less-15" alt="Less - 15" title="Less - 15" coords="420,814,508,834" />
+<area shape="rect" href="Less-15" alt="POST - Blind- Boolian/time Based - Singl ..." title="POST - Blind- Boolian/time Based - Singl ..." coords="68,840,400,860" />
+<area shape="rect" href="Less-18" alt="Less - 18" title="Less - 18" coords="627,865,715,885" />
+<area shape="rect" href="Less-18" alt="POST - Header Injection - Uagent field - ..." title="POST - Header Injection - Uagent field - ..." coords="737,897,1090,917" />
+<area shape="rect" href="Less-17" alt="Less - 17" title="Less - 17" coords="428,872,516,892" />
+<area shape="rect" href="Less-17" alt="POST - Update Query- Error Based - Strin ..." title="POST - Update Query- Error Based - Strin ..." coords="112,898,405,918" />
+<area shape="rect" href="Less-20" alt="Less-20" title="Less-20" coords="622,926,702,946" />
+<area shape="rect" href="Less-20" alt="POST - Cookie injections - Uagent field  ..." title="POST - Cookie injections - Uagent field  ..." coords="722,962,1082,982" />
+<area shape="rect" href="Less-19" alt="Less-19" title="Less-19" coords="442,930,522,950" />
+<area shape="rect" href="Less-19" alt="POST - Header Injection - Referer field  ..." title="POST - Header Injection - Referer field  ..." coords="70,962,423,982" />
+<area shape="rect" href="#FMID_675480068FM" alt="Less-22" title="Less-22" coords="601,985,681,1005" />
+<area shape="rect" href="#FMID_471107631FM" alt="Future Editions" title="Future Editions" coords="702,1017,829,1037" />
+<area shape="rect" href="#FMID_38136745FM" alt="Less-21" title="Less-21" coords="461,986,541,1006" />
+<area shape="rect" href="#FMID_58695417FM" alt="POST- Dump into outfile - String" title="POST- Dump into outfile - String" coords="217,1018,445,1038" />
+</map>
+</body>
+</html>

@@ -16,1321 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `dedev3_1`
+-- Current Database: `challenges`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `dedev3_1` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `challenges` /*!40100 DEFAULT CHARACTER SET gbk */;
 
-USE `dedev3_1`;
+USE `challenges`;
 
 --
--- Table structure for table `dede_addonarticle`
+-- Table structure for table `J4BD0QGQOX`
 --
 
-DROP TABLE IF EXISTS `dede_addonarticle`;
+DROP TABLE IF EXISTS `J4BD0QGQOX`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_addonarticle` (
-  `aid` int(11) NOT NULL DEFAULT '0',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `body` mediumtext,
-  PRIMARY KEY (`aid`),
-  KEY `typeid` (`typeid`)
+CREATE TABLE `J4BD0QGQOX` (
+  `id` int(2) unsigned NOT NULL DEFAULT '1',
+  `sessid` char(32) NOT NULL,
+  `secret_I9P7` char(32) NOT NULL,
+  `tryy` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`sessid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dede_addonarticle`
+-- Dumping data for table `J4BD0QGQOX`
 --
 
-LOCK TABLES `dede_addonarticle` WRITE;
-/*!40000 ALTER TABLE `dede_addonarticle` DISABLE KEYS */;
-INSERT INTO `dede_addonarticle` VALUES (1,1,'test');
-/*!40000 ALTER TABLE `dede_addonarticle` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_addonflash`
---
-
-DROP TABLE IF EXISTS `dede_addonflash`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_addonflash` (
-  `aid` int(11) NOT NULL DEFAULT '0',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `filesize` varchar(10) NOT NULL DEFAULT '',
-  `playtime` varchar(10) NOT NULL DEFAULT '',
-  `flashtype` varchar(10) NOT NULL DEFAULT '',
-  `flashrank` smallint(6) NOT NULL DEFAULT '0',
-  `width` smallint(6) NOT NULL DEFAULT '0',
-  `height` smallint(6) NOT NULL DEFAULT '0',
-  `flashurl` varchar(80) NOT NULL DEFAULT '',
-  PRIMARY KEY (`aid`),
-  KEY `flashMain` (`typeid`,`filesize`,`flashrank`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_addonflash`
---
-
-LOCK TABLES `dede_addonflash` WRITE;
-/*!40000 ALTER TABLE `dede_addonflash` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_addonflash` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_addonimages`
---
-
-DROP TABLE IF EXISTS `dede_addonimages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_addonimages` (
-  `aid` int(11) NOT NULL DEFAULT '0',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `pagestyle` smallint(6) NOT NULL DEFAULT '1',
-  `maxwidth` smallint(6) NOT NULL DEFAULT '600',
-  `imgurls` text,
-  `row` smallint(6) NOT NULL DEFAULT '0',
-  `col` smallint(6) NOT NULL DEFAULT '0',
-  `isrm` smallint(6) NOT NULL DEFAULT '0',
-  `ddmaxwidth` smallint(6) NOT NULL DEFAULT '200',
-  PRIMARY KEY (`aid`),
-  KEY `imagesMain` (`typeid`,`pagestyle`,`maxwidth`,`row`,`col`,`isrm`,`ddmaxwidth`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_addonimages`
---
-
-LOCK TABLES `dede_addonimages` WRITE;
-/*!40000 ALTER TABLE `dede_addonimages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_addonimages` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_addonsoft`
---
-
-DROP TABLE IF EXISTS `dede_addonsoft`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_addonsoft` (
-  `aid` int(11) NOT NULL DEFAULT '0',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `filetype` varchar(10) NOT NULL DEFAULT '',
-  `language` varchar(10) NOT NULL DEFAULT '',
-  `softtype` varchar(10) NOT NULL DEFAULT '',
-  `accredit` varchar(10) NOT NULL DEFAULT '',
-  `os` varchar(30) NOT NULL DEFAULT '',
-  `softrank` int(11) NOT NULL DEFAULT '0',
-  `officialUrl` varchar(30) NOT NULL DEFAULT '',
-  `officialDemo` varchar(50) NOT NULL DEFAULT '',
-  `softsize` varchar(10) NOT NULL DEFAULT '',
-  `softlinks` text,
-  `introduce` text,
-  PRIMARY KEY (`aid`),
-  KEY `softMain` (`typeid`,`filetype`,`language`,`os`,`softrank`,`softsize`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_addonsoft`
---
-
-LOCK TABLES `dede_addonsoft` WRITE;
-/*!40000 ALTER TABLE `dede_addonsoft` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_addonsoft` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_addonspec`
---
-
-DROP TABLE IF EXISTS `dede_addonspec`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_addonspec` (
-  `aid` int(11) NOT NULL DEFAULT '0',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `note` text,
-  PRIMARY KEY (`aid`),
-  KEY `typeid` (`typeid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_addonspec`
---
-
-LOCK TABLES `dede_addonspec` WRITE;
-/*!40000 ALTER TABLE `dede_addonspec` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_addonspec` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_admin`
---
-
-DROP TABLE IF EXISTS `dede_admin`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_admin` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `usertype` int(10) unsigned NOT NULL DEFAULT '0',
-  `userid` varchar(30) NOT NULL DEFAULT '',
-  `pwd` varchar(50) NOT NULL DEFAULT '',
-  `uname` varchar(20) NOT NULL DEFAULT '',
-  `tname` varchar(30) NOT NULL DEFAULT '',
-  `email` varchar(30) NOT NULL DEFAULT '',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `logintime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `loginip` varchar(20) NOT NULL DEFAULT '',
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_admin`
---
-
-LOCK TABLES `dede_admin` WRITE;
-/*!40000 ALTER TABLE `dede_admin` DISABLE KEYS */;
-INSERT INTO `dede_admin` VALUES (1,10,'admin','21232f297a57a5a743894a0e','admin','','',0,'2019-03-05 22:29:40','192.168.203.1');
-/*!40000 ALTER TABLE `dede_admin` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_admintype`
---
-
-DROP TABLE IF EXISTS `dede_admintype`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_admintype` (
-  `rank` smallint(6) NOT NULL DEFAULT '1',
-  `typename` varchar(30) NOT NULL DEFAULT '',
-  `system` smallint(6) NOT NULL DEFAULT '0',
-  `purviews` text
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_admintype`
---
-
-LOCK TABLES `dede_admintype` WRITE;
-/*!40000 ALTER TABLE `dede_admintype` DISABLE KEYS */;
-INSERT INTO `dede_admintype` VALUES (1,'信息发布员',1,'t_AccList a_AccNew a_AccList a_MyList a_MyEdit a_MyDel sys_MdPwd sys_Feedback sys_MyUpload plus_留言簿模块 '),(5,'频道管理员',1,'t_AccList t_AccNew t_AccEdit t_AccDel a_AccNew a_AccList a_AccEdit a_AccDel a_AccCheck a_MyList a_MyEdit a_MyDel a_MyCheck co_AddNote co_EditNote co_PlayNote co_ListNote co_ViewNote spec_New spec_List spec_Edit sys_MdPwd sys_Log sys_ArcTj sys_Source sys_Writer sys_Keyword sys_MakeHtml sys_Feedback sys_Upload sys_MyUpload member_List member_Edit plus_站内新闻发布 plus_友情链接模块 plus_留言簿模块 plus_投票模块 plus_广告管理 '),(10,'超级管理员',1,'admin_AllowAll ');
-/*!40000 ALTER TABLE `dede_admintype` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_arcatt`
---
-
-DROP TABLE IF EXISTS `dede_arcatt`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_arcatt` (
-  `att` smallint(6) NOT NULL DEFAULT '0',
-  `attname` varchar(30) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_arcatt`
---
-
-LOCK TABLES `dede_arcatt` WRITE;
-/*!40000 ALTER TABLE `dede_arcatt` DISABLE KEYS */;
-INSERT INTO `dede_arcatt` VALUES (1,'滚动显示'),(2,'头条推荐'),(3,'幻灯片显');
-/*!40000 ALTER TABLE `dede_arcatt` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_archives`
---
-
-DROP TABLE IF EXISTS `dede_archives`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_archives` (
-  `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `typeid` int(11) unsigned NOT NULL DEFAULT '0',
-  `typeid2` int(11) unsigned NOT NULL DEFAULT '0',
-  `sortrank` int(11) NOT NULL DEFAULT '0',
-  `iscommend` smallint(6) NOT NULL DEFAULT '0',
-  `ismake` smallint(6) NOT NULL DEFAULT '0',
-  `channel` int(11) NOT NULL DEFAULT '1',
-  `arcrank` smallint(6) NOT NULL DEFAULT '0',
-  `click` int(11) unsigned NOT NULL DEFAULT '0',
-  `money` smallint(6) NOT NULL DEFAULT '0',
-  `title` varchar(80) NOT NULL DEFAULT '',
-  `shorttitle` varchar(36) NOT NULL DEFAULT '',
-  `color` varchar(10) NOT NULL DEFAULT '',
-  `writer` varchar(30) NOT NULL DEFAULT '',
-  `source` varchar(50) NOT NULL DEFAULT '',
-  `litpic` varchar(100) NOT NULL DEFAULT '',
-  `pubdate` int(11) NOT NULL DEFAULT '0',
-  `senddate` int(11) NOT NULL DEFAULT '0',
-  `arcatt` smallint(6) NOT NULL DEFAULT '0',
-  `adminID` int(11) NOT NULL DEFAULT '0',
-  `memberID` int(11) unsigned NOT NULL DEFAULT '0',
-  `description` varchar(250) NOT NULL DEFAULT '',
-  `keywords` varchar(60) NOT NULL DEFAULT '',
-  `templet` varchar(60) NOT NULL DEFAULT '',
-  `lastpost` int(11) NOT NULL DEFAULT '0',
-  `postnum` int(11) NOT NULL DEFAULT '0',
-  `redirecturl` varchar(150) NOT NULL DEFAULT '',
-  `mtype` int(11) NOT NULL DEFAULT '0',
-  `userip` varchar(20) NOT NULL DEFAULT '',
-  PRIMARY KEY (`ID`),
-  KEY `click` (`click`),
-  KEY `typeid` (`typeid`),
-  KEY `arcrank` (`arcrank`),
-  KEY `sortrank` (`sortrank`),
-  KEY `senddate` (`senddate`),
-  KEY `pubdate` (`pubdate`),
-  KEY `litpic` (`litpic`),
-  KEY `typeid2` (`typeid2`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_archives`
---
-
-LOCK TABLES `dede_archives` WRITE;
-/*!40000 ALTER TABLE `dede_archives` DISABLE KEYS */;
-INSERT INTO `dede_archives` VALUES (1,1,1,1551796286,0,1,1,0,1,0,'test','test','','','','',1551796271,1551796286,0,1,0,'test','test ','',0,0,'',0,'');
-/*!40000 ALTER TABLE `dede_archives` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_arcrank`
---
-
-DROP TABLE IF EXISTS `dede_arcrank`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_arcrank` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `rank` smallint(10) NOT NULL DEFAULT '0',
-  `membername` varchar(20) NOT NULL DEFAULT '',
-  `adminrank` smallint(6) NOT NULL DEFAULT '0',
-  `money` int(11) NOT NULL DEFAULT '500',
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_arcrank`
---
-
-LOCK TABLES `dede_arcrank` WRITE;
-/*!40000 ALTER TABLE `dede_arcrank` DISABLE KEYS */;
-INSERT INTO `dede_arcrank` VALUES (1,0,'开放浏览',5,0),(2,-1,'待审核稿件',0,0),(3,10,'注册会员',5,0),(4,50,'中级会员',5,2500),(5,100,'高级会员',5,10000);
-/*!40000 ALTER TABLE `dede_arcrank` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_arctype`
---
-
-DROP TABLE IF EXISTS `dede_arctype`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_arctype` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `reID` int(10) unsigned NOT NULL DEFAULT '0',
-  `topID` int(10) unsigned NOT NULL DEFAULT '0',
-  `sortrank` smallint(6) NOT NULL DEFAULT '50',
-  `typename` varchar(30) NOT NULL DEFAULT '',
-  `typedir` varchar(100) NOT NULL DEFAULT '',
-  `isdefault` smallint(6) NOT NULL DEFAULT '0',
-  `defaultname` varchar(20) NOT NULL DEFAULT 'index.html',
-  `issend` smallint(6) NOT NULL DEFAULT '0',
-  `channeltype` smallint(6) NOT NULL DEFAULT '1',
-  `maxpage` int(11) NOT NULL DEFAULT '-1',
-  `ispart` smallint(6) NOT NULL DEFAULT '0',
-  `corank` smallint(6) NOT NULL DEFAULT '0',
-  `tempindex` varchar(60) NOT NULL DEFAULT '',
-  `templist` varchar(60) NOT NULL DEFAULT '',
-  `temparticle` varchar(60) NOT NULL DEFAULT '',
-  `tempone` varchar(60) NOT NULL DEFAULT '',
-  `namerule` varchar(50) NOT NULL DEFAULT '',
-  `namerule2` varchar(50) NOT NULL DEFAULT '',
-  `modname` varchar(30) NOT NULL DEFAULT '',
-  `description` varchar(200) NOT NULL DEFAULT '',
-  `keywords` varchar(100) NOT NULL DEFAULT '',
-  `moresite` smallint(6) NOT NULL DEFAULT '0',
-  `siterefer` smallint(6) NOT NULL DEFAULT '0',
-  `sitepath` varchar(60) NOT NULL DEFAULT '',
-  `siteurl` varchar(60) NOT NULL DEFAULT '',
-  `ishidden` smallint(6) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `moresite` (`moresite`,`sitepath`,`siteurl`),
-  KEY `mainIndex` (`reID`,`sortrank`,`typename`,`typedir`,`isdefault`,`defaultname`,`channeltype`,`ispart`,`namerule`,`namerule2`,`corank`,`topID`,`ishidden`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_arctype`
---
-
-LOCK TABLES `dede_arctype` WRITE;
-/*!40000 ALTER TABLE `dede_arctype` DISABLE KEYS */;
-INSERT INTO `dede_arctype` VALUES (1,0,0,50,'test','{cmspath}/html/test',1,'index.html',0,1,-1,0,0,'{style}/index_article.htm','{style}/list_article.htm','{style}/article_article.htm','','{typedir}/{Y}{M}{D}/{aid}.html','{typedir}/list_{tid}_{page}.html','default','','',0,1,'','',0);
-/*!40000 ALTER TABLE `dede_arctype` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_area`
---
-
-DROP TABLE IF EXISTS `dede_area`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_area` (
-  `eid` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(20) NOT NULL DEFAULT '',
-  `rid` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_area`
---
-
-LOCK TABLES `dede_area` WRITE;
-/*!40000 ALTER TABLE `dede_area` DISABLE KEYS */;
-INSERT INTO `dede_area` VALUES (1,'北京市',0),(101,'东城区',1),(102,'西城区',1),(103,'崇文区',1),(104,'宣武区',1),(105,'朝阳区',1),(106,'海淀区',1),(107,'丰台区',1),(108,'石景山区',1),(109,'门头沟区',1),(110,'房山区',1),(111,'通州区',1),(112,'顺义区',1),(113,'昌平区',1),(114,'大兴区',1),(115,'平谷县',1),(116,'怀柔县',1),(117,'密云县',1),(118,'延庆县',1),(2,'上海市',0),(201,'黄浦区',2),(202,'卢湾区',2),(203,'徐汇区',2),(204,'长宁区',2),(205,'静安区',2),(206,'普陀区',2),(207,'闸北区',2),(208,'虹口区',2),(209,'杨浦区',2),(210,'宝山区',2),(211,'闵行区',2),(212,'嘉定区',2),(213,'浦东新区',2),(214,'松江区',2),(215,'金山区',2),(216,'青浦区',2),(217,'南汇区',2),(218,'奉贤区',2),(219,'崇明县',2),(3,'天津市',0),(301,'和平区',3),(302,'河东区',3),(303,'河西区',3),(304,'南开区',3),(305,'河北区',3),(306,'红桥区',3),(307,'塘沽区',3),(308,'汉沽区',3),(309,'大港区',3),(310,'东丽区',3),(311,'西青区',3),(312,'北辰区',3),(313,'津南区',3),(314,'武清区',3),(315,'宝坻区',3),(316,'静海县',3),(317,'宁河县',3),(318,'蓟县',3),(4,'重庆市',0),(401,'渝中区',4),(402,'大渡口区',4),(403,'江北区',4),(404,'沙坪坝区',4),(405,'九龙坡区',4),(406,'南岸区',4),(407,'北碚区',4),(408,'万盛区',4),(409,'双桥区',4),(410,'渝北区',4),(411,'巴南区',4),(412,'万州区',4),(413,'涪陵区',4),(414,'黔江区',4),(415,'永川市',4),(416,'合川市',4),(417,'江津市',4),(418,'南川市',4),(419,'长寿县',4),(420,'綦江县',4),(421,'潼南县',4),(422,'荣昌县',4),(423,'璧山县',4),(424,'大足县',4),(425,'铜梁县',4),(426,'梁平县',4),(427,'城口县',4),(428,'垫江县',4),(429,'武隆县',4),(430,'丰都县',4),(431,'奉节县',4),(432,'开县',4),(433,'云阳县',4),(434,'忠县',4),(435,'巫溪县',4),(436,'巫山县',4),(437,'石柱县',4),(438,'秀山县',4),(439,'酉阳县',4),(440,'彭水县',4),(5,'广东省',0),(501,'广州市',5),(502,'深圳市',5),(503,'珠海市',5),(504,'汕头市',5),(505,'韶关市',5),(506,'河源市',5),(507,'梅州市',5),(508,'惠州市',5),(509,'汕尾市',5),(510,'东莞市',5),(511,'中山市',5),(512,'江门市',5),(513,'佛山市',5),(514,'阳江市',5),(515,'湛江市',5),(516,'茂名市',5),(517,'肇庆市',5),(518,'清远市',5),(519,'潮州市',5),(520,'揭阳市',5),(521,'云浮市',5),(6,'福建省',0),(601,'福州市',6),(602,'厦门市',6),(603,'三明市',6),(604,'莆田市',6),(605,'泉州市',6),(606,'漳州市',6),(607,'南平市',6),(608,'龙岩市',6),(609,'宁德市',6),(7,'浙江省',0),(701,'杭州市',7),(702,'宁波市',7),(703,'温州市',7),(704,'嘉兴市',7),(705,'湖州市',7),(706,'绍兴市',7),(707,'金华市',7),(708,'衢州市',7),(709,'舟山市',7),(710,'台州市',7),(711,'丽水市',7),(8,'江苏省',0),(801,'南京市',8),(802,'徐州市',8),(803,'连云港市',8),(804,'淮安市',8),(805,'宿迁市',8),(806,'盐城市',8),(807,'扬州市',8),(808,'泰州市',8),(809,'南通市',8),(810,'镇江市',8),(811,'常州市',8),(812,'无锡市',8),(813,'苏州市',8),(9,'山东省',0),(901,'济南市',9),(902,'青岛市',9),(903,'淄博市',9),(904,'枣庄市',9),(905,'东营市',9),(906,'潍坊市',9),(907,'烟台市',9),(908,'威海市',9),(909,'济宁市',9),(910,'泰安市',9),(911,'日照市',9),(912,'莱芜市',9),(913,'德州市',9),(914,'临沂市',9),(915,'聊城市',9),(916,'滨州市',9),(917,'菏泽市',9),(10,'辽宁省',0),(1001,'沈阳市',10),(1002,'大连市',10),(1003,'鞍山市',10),(1004,'抚顺市',10),(1005,'本溪市',10),(1006,'丹东市',10),(1007,'锦州市',10),(1008,'葫芦岛市',10),(1009,'营口市',10),(1010,'盘锦市',10),(1011,'阜新市',10),(1012,'辽阳市',10),(1013,'铁岭市',10),(1014,'朝阳市',10),(11,'江西省',0),(1101,'南昌市',11),(1102,'景德镇市',11),(1103,'萍乡市',11),(1104,'新余市',11),(1105,'九江市',11),(1106,'鹰潭市',11),(1107,'赣州市',11),(1108,'吉安市',11),(1109,'宜春市',11),(1110,'抚州市',11),(1111,'上饶市',11),(12,'四川省',0),(1201,'成都市',12),(1202,'自贡市',12),(1203,'攀枝花市',12),(1204,'泸州市',12),(1205,'德阳市',12),(1206,'绵阳市',12),(1207,'广元市',12),(1208,'遂宁市',12),(1209,'内江市',12),(1210,'乐山市',12),(1211,'南充市',12),(1212,'宜宾市',12),(1213,'广安市',12),(1214,'达州市',12),(1215,'巴中市',12),(1216,'雅安市',12),(1217,'眉山市',12),(1218,'资阳市',12),(1219,'阿坝州',12),(1220,'甘孜州',12),(1221,'凉山州',12),(13,'陕西省',0),(1301,'西安市',13),(1302,'铜川市',13),(1303,'宝鸡市',13),(1304,'咸阳市',13),(1305,'渭南市',13),(1306,'延安市',13),(1307,'汉中市',13),(1308,'榆林市',13),(1309,'安康市',13),(1310,'商洛地区',13),(14,'湖北省',0),(1401,'武汉市',14),(1402,'黄石市',14),(1403,'襄樊市',14),(1404,'十堰市',14),(1405,'荆州市',14),(1406,'宜昌市',14),(1407,'荆门市',14),(1408,'鄂州市',14),(1409,'孝感市',14),(1410,'黄冈市',14),(1411,'咸宁市',14),(1412,'随州市',14),(1413,'仙桃市',14),(1414,'天门市',14),(1415,'潜江市',14),(1416,'神农架',14),(1417,'恩施州',14),(15,'河南省',0),(1501,'郑州市',15),(1502,'开封市',15),(1503,'洛阳市',15),(1504,'平顶山市',15),(1505,'焦作市',15),(1506,'鹤壁市',15),(1507,'新乡市',15),(1508,'安阳市',15),(1509,'濮阳市',15),(1510,'许昌市',15),(1511,'漯河市',15),(1512,'三门峡市',15),(1513,'南阳市',15),(1514,'商丘市',15),(1515,'信阳市',15),(1516,'周口市',15),(1517,'驻马店市',15),(1518,'济源市',15),(16,'河北省',0),(1601,'石家庄市',16),(1602,'唐山市',16),(1603,'秦皇岛市',16),(1604,'邯郸市',16),(1605,'邢台市',16),(1606,'保定市',16),(1607,'张家口市',16),(1608,'承德市',16),(1609,'沧州市',16),(1610,'廊坊市',16),(1611,'衡水市',16),(17,'山西省',0),(1701,'太原市',17),(1702,'大同市',17),(1703,'阳泉市',17),(1704,'长治市',17),(1705,'晋城市',17),(1706,'朔州市',17),(1707,'晋中市',17),(1708,'忻州市',17),(1709,'临汾市',17),(1710,'运城市',17),(1711,'吕梁地区',17),(18,'内蒙古',0),(1801,'呼和浩特',18),(1802,'包头市',18),(1803,'乌海市',18),(1804,'赤峰市',18),(1805,'通辽市',18),(1806,'鄂尔多斯',18),(1807,'乌兰察布',18),(1808,'锡林郭勒',18),(1809,'呼伦贝尔',18),(1810,'巴彦淖尔',18),(1811,'阿拉善盟',18),(1812,'兴安盟',18),(19,'吉林省',0),(1901,'长春市',19),(1902,'吉林市',19),(1903,'四平市',19),(1904,'辽源市',19),(1905,'通化市',19),(1906,'白山市',19),(1907,'松原市',19),(1908,'白城市',19),(1909,'延边州',19),(20,'黑龙江',0),(2001,'哈尔滨市',20),(2002,'齐齐哈尔',20),(2003,'鹤岗市',20),(2004,'双鸭山市',20),(2005,'鸡西市',20),(2006,'大庆市',20),(2007,'伊春市',20),(2008,'牡丹江市',20),(2009,'佳木斯市',20),(2010,'七台河市',20),(2011,'黑河市',20),(2012,'绥化市',20),(2013,'大兴安岭',20),(21,'安徽省',0),(2101,'合肥市',21),(2102,'芜湖市',21),(2103,'蚌埠市',21),(2104,'淮南市',21),(2105,'马鞍山市',21),(2106,'淮北市',21),(2107,'铜陵市',21),(2108,'安庆市',21),(2109,'黄山市',21),(2110,'滁州市',21),(2111,'阜阳市',21),(2112,'宿州市',21),(2113,'巢湖市',21),(2114,'六安市',21),(2115,'亳州市',21),(2116,'宣城市',21),(2117,'池州市',21),(22,'湖南省',0),(2201,'长沙市',22),(2202,'株州市',22),(2203,'湘潭市',22),(2204,'衡阳市',22),(2205,'邵阳市',22),(2206,'岳阳市',22),(2207,'常德市',22),(2208,'张家界市',22),(2209,'益阳市',22),(2210,'郴州市',22),(2211,'永州市',22),(2212,'怀化市',22),(2213,'娄底市',22),(2214,'湘西州',22),(23,'广西区',0),(2301,'南宁市',23),(2302,'柳州市',23),(2303,'桂林市',23),(2304,'梧州市',23),(2305,'北海市',23),(2306,'防城港市',23),(2307,'钦州市',23),(2308,'贵港市',23),(2309,'玉林市',23),(2310,'南宁地区',23),(2311,'柳州地区',23),(2312,'贺州地区',23),(2313,'百色地区',23),(2314,'河池地区',23),(24,'海南省',0),(2401,'海口市',24),(2402,'三亚市',24),(2403,'五指山市',24),(2404,'琼海市',24),(2405,'儋州市',24),(2406,'琼山市',24),(2407,'文昌市',24),(2408,'万宁市',24),(2409,'东方市',24),(2410,'澄迈县',24),(2411,'定安县',24),(2412,'屯昌县',24),(2413,'临高县',24),(2414,'白沙县',24),(2415,'昌江县',24),(2416,'乐东县',24),(2417,'陵水县',24),(2418,'保亭县',24),(2419,'琼中县',24),(25,'云南省',0),(2501,'昆明市',25),(2502,'曲靖市',25),(2503,'玉溪市',25),(2504,'保山市',25),(2505,'昭通市',25),(2506,'思茅地区',25),(2507,'临沧地区',25),(2508,'丽江地区',25),(2509,'文山州',25),(2510,'红河州',25),(2511,'西双版纳',25),(2512,'楚雄州',25),(2513,'大理州',25),(2514,'德宏州',25),(2515,'怒江州',25),(2516,'迪庆州',25),(26,'贵州省',0),(2601,'贵阳市',26),(2602,'六盘水市',26),(2603,'遵义市',26),(2604,'安顺市',26),(2605,'铜仁地区',26),(2606,'毕节地区',26),(2607,'黔西南州',26),(2608,'黔东南州',26),(2609,'黔南州',26),(27,'西藏区',0),(2701,'拉萨市',27),(2702,'那曲地区',27),(2703,'昌都地区',27),(2704,'山南地区',27),(2705,'日喀则',27),(2706,'阿里地区',27),(2707,'林芝地区',27),(28,'甘肃省',0),(2801,'兰州市',28),(2802,'金昌市',28),(2803,'白银市',28),(2804,'天水市',28),(2805,'嘉峪关市',28),(2806,'武威市',28),(2807,'定西地区',28),(2808,'平凉地区',28),(2809,'庆阳地区',28),(2810,'陇南地区',28),(2811,'张掖地区',28),(2812,'酒泉地区',28),(2813,'甘南州',28),(2814,'临夏州',28),(29,'宁夏区',0),(2901,'银川市',29),(2902,'石嘴山市',29),(2903,'吴忠市',29),(2904,'固原市',29),(30,'青海省',0),(3001,'西宁市',30),(3002,'海东地区',30),(3003,'海北州',30),(3004,'黄南州',30),(3005,'海南州',30),(3006,'果洛州',30),(3007,'玉树州',30),(3008,'海西州',30),(31,'新疆区',0),(3101,'乌鲁木齐',31),(3102,'克拉玛依',31),(3103,'石河子市',31),(3104,'吐鲁番',31),(3105,'哈密地区',31),(3106,'和田地区',31),(3107,'阿克苏',31),(3108,'喀什地区',31),(3109,'克孜勒苏',31),(3110,'巴音郭楞',31),(3111,'昌吉州',31),(3112,'博尔塔拉',31),(3113,'伊犁州',31),(32,'香港区',0),(33,'澳门区',0);
-/*!40000 ALTER TABLE `dede_area` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_channeltype`
---
-
-DROP TABLE IF EXISTS `dede_channeltype`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_channeltype` (
-  `ID` smallint(6) NOT NULL DEFAULT '0',
-  `nid` varchar(10) NOT NULL DEFAULT '',
-  `typename` varchar(30) NOT NULL DEFAULT '',
-  `addtable` varchar(30) NOT NULL DEFAULT '',
-  `addcon` varchar(30) NOT NULL DEFAULT '',
-  `mancon` varchar(30) NOT NULL DEFAULT '',
-  `editcon` varchar(30) NOT NULL DEFAULT '',
-  `fieldset` text,
-  `listadd` varchar(250) NOT NULL DEFAULT '',
-  `issystem` smallint(6) NOT NULL DEFAULT '0',
-  `isshow` smallint(6) NOT NULL DEFAULT '1',
-  `issend` smallint(6) NOT NULL DEFAULT '0',
-  `arcsta` smallint(6) NOT NULL DEFAULT '-1',
-  `sendrank` smallint(6) NOT NULL DEFAULT '10',
-  PRIMARY KEY (`ID`),
-  KEY `channelIndex` (`nid`,`typename`,`addcon`,`mancon`,`editcon`,`addtable`,`isshow`,`arcsta`,`sendrank`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_channeltype`
---
-
-LOCK TABLES `dede_channeltype` WRITE;
-/*!40000 ALTER TABLE `dede_channeltype` DISABLE KEYS */;
-INSERT INTO `dede_channeltype` VALUES (1,'article','普通文章','dede_addonarticle','article_add.php','content_list.php','article_edit.php','<field:body type=\'htmltext\' isnull=\'true\' default=\'\' rename=\'\' page=\'split\'/>','',1,1,1,-1,10),(2,'image','图片集','dede_addonimages','album_add.php','content_i_list.php','album_edit.php','<field:pagestyle type=\'number\' isnull=\'true\' default=\'1\' rename=\'\' />\r\n\r\n<field:imgurls type=\'img\' isnull=\'true\' default=\'\' rename=\'\' page=\'split\'/>\r\n','',1,1,1,-1,10),(3,'soft','软件','dede_addonsoft','soft_add.php','content_i_list.php','soft_edit.php','<field:filetype type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:language type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:softtype type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:accredit type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:os type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:softrank type=\'int\' isnull=\'true\' default=\'3\' rename=\'\' function=\'GetRankStar(@me)\'/>\r\n\r\n<field:officialUrl type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:officialDemo type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:softsize type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:softlinks type=\'softlinks\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:introduce type=\'htmltext\' isnull=\'tr\nnu\ne\' default=\'\' rename=\'\' />\nr\n\n','filetype,language,softtype,os,accredit,softrank',1,1,0,-1,10),(4,'flash','Flash','dede_addonflash','flash_add.php','content_i_list.php','flash_edit.php','<field:filesize type=\'text\' isnull=\'true\' default=\'1 MB\' rename=\'\' />\r\n\r\n<field:playtime type=\'text\' isnull=\'true\' default=\'3 分钟\' rename=\'\' />\r\n\r\n<field:flashtype type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n\r\n<field:flashrank type=\'int\' isnull=\'true\' default=\'3\' rename=\'\' function=\'GetRankStar(@me)\'/>\r\n\r\n<field:width type=\'int\' isnull=\'true\' default=\'500\' rename=\'\' />\r\n\r\n<field:height type=\'int\' isnull=\'true\' default=\'400\' rename=\'\' />\r\n\r\n<field:flashurl type=\'text\' isnull=\'true\' default=\'\' rename=\'\' />\r\n','filesize,playtime,flashtype,flashrank',1,1,0,-1,10),(-1,'spec','专题','dede_addonspec','spec_add.php','content_s_list.php','spec_edit.php','<field:note type=\'specialtopic\' isnull=\'true\' default=\'\' rename=\'\'/>','',1,1,0,-1,10);
-/*!40000 ALTER TABLE `dede_channeltype` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_co_dataswitch`
---
-
-DROP TABLE IF EXISTS `dede_co_dataswitch`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_co_dataswitch` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `notename` varchar(100) NOT NULL DEFAULT '',
-  `channelid` int(11) NOT NULL DEFAULT '0',
-  `description` varchar(250) NOT NULL DEFAULT '',
-  `addtime` int(11) NOT NULL DEFAULT '0',
-  `notes` text,
-  PRIMARY KEY (`aid`),
-  KEY `notename` (`notename`,`channelid`,`description`,`addtime`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_co_dataswitch`
---
-
-LOCK TABLES `dede_co_dataswitch` WRITE;
-/*!40000 ALTER TABLE `dede_co_dataswitch` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_co_dataswitch` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_co_exrule`
---
-
-DROP TABLE IF EXISTS `dede_co_exrule`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_co_exrule` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `channelid` int(11) NOT NULL DEFAULT '0',
-  `rulename` varchar(100) NOT NULL DEFAULT '',
-  `etype` varchar(10) NOT NULL DEFAULT '',
-  `dtime` int(11) NOT NULL DEFAULT '0',
-  `ruleset` text,
-  PRIMARY KEY (`aid`),
-  KEY `rulename` (`rulename`,`etype`,`dtime`,`channelid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_co_exrule`
---
-
-LOCK TABLES `dede_co_exrule` WRITE;
-/*!40000 ALTER TABLE `dede_co_exrule` DISABLE KEYS */;
-INSERT INTO `dede_co_exrule` VALUES (1,1,'Dede文章模型','当前系统',1164939755,'\r\n{dede:note \r\n  rulename=\'Dede文章模型\'\r\n  etype=\'当前系统\'\r\n  tablename=\'dede_archives,dede_addonarticle\'\r\n  autofield=\'ID\'\r\n  synfield=\'aid\'\r\n  channelid=\'1\'\r\n/}\r\n	{dede:field name=\'typeid\' comment=\'栏目ID\' intable=\'dede_archives\' source=\'value\'}{tid}{/dede:field}\r\n{dede:field name=\'title\' comment=\'文章标题\' intable=\'dede_archives\' source=\'export\'}{/dede:field}\r\n{dede:field name=\'sortrank\' comment=\'排序级别\' intable=\'dede_archives\' source=\'function\'}@me = time();{/dede:field}\r\n{dede:field name=\'arcrank\' comment=\'文档权限\' intable=\'dede_archives\' source=\'value\'}{rank}{/dede:field}\r\n{dede:field name=\'channel\' comment=\'频道类型\' intable=\'dede_archives\' source=\'value\'}{cid}{/dede:field}\r\n{dede:field name=\'writer\' comment=\'文章作者\' intable=\'dede_archives\' source=\'export\'}{/dede:field}\r\n\n{dede:field name=\'litpic\' comment=\'缩略图\' intable=\'dede_archives\' source=\'function\'}@me = @litpic;{/dede:field}\r\n{dede:field name=\'pubdate\' comment=\'发布时间\' intable=\'dede_archives\' source=\'function\'}if(@me!=\"\") @me = GetMkTime(@me);\r\nelse @me = time();{/dede:field}\r\n{dede:field name=\'senddate\' comment=\'录入时间\' intable=\'dede_archives\' source=\'function\'}@me = time();{/dede:field}\r\n{dede:field name=\'typeid\' comment=\'栏目ID\' intable=\'dede_addonarticle\' source=\'value\'}{tid}{/dede:field}\r\n{dede:field name=\'body\' comment=\'文章内容\' intable=\'dede_addonarticle\' source=\'export\'}{/dede:field}\r\n{dede:field name=\'adminID\' comment=\'管理员ID\' intable=\'dede_archives\' source=\'value\'}{admin}{/dede:field}\r\n{dede:field name=\'source\' comment=\'文章来源\' intable=\'dede_archives\' source=\'export\'}{/dede:field}\r\n');
-/*!40000 ALTER TABLE `dede_co_exrule` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_co_listenurl`
---
-
-DROP TABLE IF EXISTS `dede_co_listenurl`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_co_listenurl` (
-  `nid` int(11) NOT NULL DEFAULT '0',
-  `url` varchar(150) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_co_listenurl`
---
-
-LOCK TABLES `dede_co_listenurl` WRITE;
-/*!40000 ALTER TABLE `dede_co_listenurl` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_co_listenurl` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_co_mediaurl`
---
-
-DROP TABLE IF EXISTS `dede_co_mediaurl`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_co_mediaurl` (
-  `nid` int(11) NOT NULL DEFAULT '0',
-  `rurl` varchar(150) NOT NULL DEFAULT '',
-  `nurl` varchar(80) NOT NULL DEFAULT '',
-  KEY `nurl` (`nurl`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_co_mediaurl`
---
-
-LOCK TABLES `dede_co_mediaurl` WRITE;
-/*!40000 ALTER TABLE `dede_co_mediaurl` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_co_mediaurl` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_conote`
---
-
-DROP TABLE IF EXISTS `dede_conote`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_conote` (
-  `nid` int(11) NOT NULL AUTO_INCREMENT,
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `gathername` varchar(50) NOT NULL DEFAULT '',
-  `language` varchar(10) NOT NULL DEFAULT 'gb2312',
-  `savetime` int(11) NOT NULL DEFAULT '0',
-  `lasttime` int(11) NOT NULL DEFAULT '0',
-  `noteinfo` text,
-  PRIMARY KEY (`nid`),
-  KEY `conote` (`typeid`,`gathername`,`lasttime`,`savetime`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_conote`
---
-
-LOCK TABLES `dede_conote` WRITE;
-/*!40000 ALTER TABLE `dede_conote` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_conote` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_courl`
---
-
-DROP TABLE IF EXISTS `dede_courl`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_courl` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `nid` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(60) NOT NULL DEFAULT '',
-  `url` varchar(150) NOT NULL DEFAULT '',
-  `dtime` int(11) NOT NULL DEFAULT '0',
-  `isdown` smallint(6) NOT NULL DEFAULT '0',
-  `isex` smallint(6) NOT NULL DEFAULT '0',
-  `result` text,
-  PRIMARY KEY (`aid`),
-  KEY `nid` (`nid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_courl`
---
-
-LOCK TABLES `dede_courl` WRITE;
-/*!40000 ALTER TABLE `dede_courl` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_courl` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_error`
---
-
-DROP TABLE IF EXISTS `dede_error`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_error` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL DEFAULT '',
-  `ip` varchar(20) NOT NULL DEFAULT '',
-  `dtime` int(11) NOT NULL DEFAULT '0',
-  `url` varchar(100) NOT NULL DEFAULT '',
-  `info` mediumtext,
-  PRIMARY KEY (`aid`),
-  KEY `errIndex` (`title`,`ip`,`dtime`,`url`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_error`
---
-
-LOCK TABLES `dede_error` WRITE;
-/*!40000 ALTER TABLE `dede_error` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_error` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_feedback`
---
-
-DROP TABLE IF EXISTS `dede_feedback`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_feedback` (
-  `ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `aid` int(11) unsigned NOT NULL DEFAULT '0',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `username` varchar(30) NOT NULL DEFAULT '',
-  `arctitle` varchar(60) NOT NULL DEFAULT '',
-  `ip` varchar(20) NOT NULL DEFAULT '',
-  `msg` text,
-  `ischeck` smallint(6) NOT NULL DEFAULT '0',
-  `dtime` int(11) NOT NULL DEFAULT '0',
-  `email` varchar(60) NOT NULL DEFAULT '',
-  `mid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `feedbackindex` (`aid`,`typeid`,`username`,`arctitle`,`ip`,`ischeck`,`dtime`,`email`),
-  KEY `mid` (`mid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_feedback`
---
-
-LOCK TABLES `dede_feedback` WRITE;
-/*!40000 ALTER TABLE `dede_feedback` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_feedback` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_flink`
---
-
-DROP TABLE IF EXISTS `dede_flink`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_flink` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `sortrank` int(11) NOT NULL DEFAULT '0',
-  `url` varchar(100) NOT NULL DEFAULT '',
-  `webname` varchar(30) NOT NULL DEFAULT '',
-  `msg` varchar(250) NOT NULL DEFAULT '',
-  `email` varchar(100) NOT NULL DEFAULT '',
-  `logo` varchar(100) NOT NULL DEFAULT '',
-  `dtime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `ischeck` smallint(6) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_flink`
---
-
-LOCK TABLES `dede_flink` WRITE;
-/*!40000 ALTER TABLE `dede_flink` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_flink` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_flinktype`
---
-
-DROP TABLE IF EXISTS `dede_flinktype`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_flinktype` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `typename` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_flinktype`
---
-
-LOCK TABLES `dede_flinktype` WRITE;
-/*!40000 ALTER TABLE `dede_flinktype` DISABLE KEYS */;
-INSERT INTO `dede_flinktype` VALUES (1,'综合网站'),(2,'娱乐类'),(3,'教育类'),(4,'计算机类'),(5,'电子商务'),(6,'网上信息'),(7,'论坛类'),(8,'其它类型');
-/*!40000 ALTER TABLE `dede_flinktype` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_guestbook`
---
-
-DROP TABLE IF EXISTS `dede_guestbook`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_guestbook` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `uname` varchar(30) NOT NULL DEFAULT '',
-  `email` varchar(80) NOT NULL DEFAULT '',
-  `homepage` varchar(80) NOT NULL DEFAULT '',
-  `qq` varchar(20) NOT NULL DEFAULT '',
-  `face` varchar(10) NOT NULL DEFAULT '',
-  `msg` text,
-  `ip` varchar(20) NOT NULL DEFAULT '',
-  `dtime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ischeck` smallint(6) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_guestbook`
---
-
-LOCK TABLES `dede_guestbook` WRITE;
-/*!40000 ALTER TABLE `dede_guestbook` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_guestbook` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_homepageset`
---
-
-DROP TABLE IF EXISTS `dede_homepageset`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_homepageset` (
-  `templet` varchar(100) NOT NULL DEFAULT '',
-  `position` varchar(50) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_homepageset`
---
-
-LOCK TABLES `dede_homepageset` WRITE;
-/*!40000 ALTER TABLE `dede_homepageset` DISABLE KEYS */;
-INSERT INTO `dede_homepageset` VALUES ('{style}/index.htm','../index.html');
-/*!40000 ALTER TABLE `dede_homepageset` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_keywords`
---
-
-DROP TABLE IF EXISTS `dede_keywords`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_keywords` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `keyword` varchar(20) NOT NULL DEFAULT '',
-  `rank` int(11) NOT NULL DEFAULT '0',
-  `sta` smallint(6) NOT NULL DEFAULT '1',
-  `rpurl` varchar(60) NOT NULL DEFAULT '',
-  PRIMARY KEY (`aid`),
-  KEY `keyword` (`keyword`,`rank`,`sta`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_keywords`
---
-
-LOCK TABLES `dede_keywords` WRITE;
-/*!40000 ALTER TABLE `dede_keywords` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_keywords` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_log`
---
-
-DROP TABLE IF EXISTS `dede_log`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_log` (
-  `lid` int(11) NOT NULL AUTO_INCREMENT,
-  `adminid` int(11) NOT NULL DEFAULT '0',
-  `filename` varchar(100) NOT NULL DEFAULT '',
-  `method` varchar(10) NOT NULL DEFAULT '',
-  `query` varchar(250) NOT NULL DEFAULT '',
-  `cip` varchar(20) NOT NULL DEFAULT '',
-  `dtime` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`lid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_log`
---
-
-LOCK TABLES `dede_log` WRITE;
-/*!40000 ALTER TABLE `dede_log` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_log` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_member`
---
-
-DROP TABLE IF EXISTS `dede_member`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_member` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `userid` varchar(32) NOT NULL DEFAULT '',
-  `pwd` varchar(32) NOT NULL DEFAULT '',
-  `uname` varchar(20) NOT NULL DEFAULT '',
-  `sex` char(2) NOT NULL DEFAULT '1',
-  `birthday` date NOT NULL DEFAULT '0000-00-00',
-  `membertype` int(11) NOT NULL DEFAULT '0',
-  `uptype` int(11) NOT NULL DEFAULT '0',
-  `upmoney` smallint(6) NOT NULL DEFAULT '0',
-  `money` int(11) NOT NULL DEFAULT '0',
-  `weight` varchar(10) NOT NULL DEFAULT '',
-  `height` varchar(10) NOT NULL DEFAULT '',
-  `job` varchar(10) NOT NULL DEFAULT '',
-  `province` smallint(5) unsigned NOT NULL DEFAULT '1',
-  `city` smallint(6) NOT NULL DEFAULT '0',
-  `myinfo` varchar(250) DEFAULT NULL,
-  `mybb` varchar(250) NOT NULL DEFAULT '',
-  `tel` varchar(30) DEFAULT NULL,
-  `oicq` varchar(15) DEFAULT NULL,
-  `email` varchar(50) NOT NULL DEFAULT '',
-  `homepage` varchar(50) DEFAULT NULL,
-  `jointime` int(11) NOT NULL DEFAULT '0',
-  `joinip` varchar(20) NOT NULL DEFAULT '',
-  `logintime` int(11) NOT NULL DEFAULT '0',
-  `loginip` varchar(20) NOT NULL DEFAULT '',
-  `c1` int(11) NOT NULL DEFAULT '0',
-  `c2` int(11) NOT NULL DEFAULT '0',
-  `c3` int(11) NOT NULL DEFAULT '0',
-  `matt` smallint(6) NOT NULL DEFAULT '0',
-  `guestbook` int(11) NOT NULL DEFAULT '0',
-  `spaceshow` int(11) NOT NULL DEFAULT '0',
-  `pageshow` int(11) NOT NULL DEFAULT '0',
-  `spacename` varchar(60) NOT NULL DEFAULT '',
-  `spaceimage` varchar(150) NOT NULL DEFAULT '',
-  `showaddr` smallint(6) NOT NULL DEFAULT '0',
-  `news` text,
-  `address` varchar(100) NOT NULL DEFAULT '',
-  `spacestyle` varchar(20) NOT NULL DEFAULT '',
-  `listnum` smallint(6) NOT NULL DEFAULT '20',
-  `fullinfo` text,
-  PRIMARY KEY (`ID`),
-  KEY `searchWord` (`uname`,`myinfo`,`spacename`,`spaceimage`),
-  KEY `memberMain` (`userid`,`birthday`,`membertype`,`uptype`,`money`,`upmoney`,`province`,`city`,`sex`,`logintime`),
-  KEY `space` (`c1`,`c2`,`c3`,`guestbook`,`spaceshow`,`pageshow`,`matt`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_member`
---
-
-LOCK TABLES `dede_member` WRITE;
-/*!40000 ALTER TABLE `dede_member` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_member` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_member_arctype`
---
-
-DROP TABLE IF EXISTS `dede_member_arctype`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_member_arctype` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `typename` varchar(50) NOT NULL DEFAULT '',
-  `memberid` int(11) NOT NULL DEFAULT '0',
-  `channelid` smallint(6) NOT NULL DEFAULT '0',
-  `rank` smallint(6) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_member_arctype`
---
-
-LOCK TABLES `dede_member_arctype` WRITE;
-/*!40000 ALTER TABLE `dede_member_arctype` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_member_arctype` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_member_flink`
---
-
-DROP TABLE IF EXISTS `dede_member_flink`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_member_flink` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `mid` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(30) NOT NULL DEFAULT '',
-  `url` varchar(100) NOT NULL DEFAULT '',
-  `linktype` smallint(6) NOT NULL DEFAULT '0',
-  `imgurl` varchar(100) NOT NULL DEFAULT '',
-  `imgwidth` smallint(6) NOT NULL DEFAULT '0',
-  `imgheight` smallint(6) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_member_flink`
---
-
-LOCK TABLES `dede_member_flink` WRITE;
-/*!40000 ALTER TABLE `dede_member_flink` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_member_flink` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_member_guestbook`
---
-
-DROP TABLE IF EXISTS `dede_member_guestbook`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_member_guestbook` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `mid` int(11) NOT NULL DEFAULT '0',
-  `gid` varchar(20) NOT NULL DEFAULT '0',
-  `title` varchar(60) NOT NULL DEFAULT '',
-  `msg` text,
-  `uname` varchar(50) NOT NULL DEFAULT '',
-  `email` varchar(50) NOT NULL DEFAULT '',
-  `qq` varchar(50) NOT NULL DEFAULT '',
-  `tel` varchar(50) NOT NULL DEFAULT '',
-  `ip` varchar(20) NOT NULL DEFAULT '',
-  `dtime` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_member_guestbook`
---
-
-LOCK TABLES `dede_member_guestbook` WRITE;
-/*!40000 ALTER TABLE `dede_member_guestbook` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_member_guestbook` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_memberstow`
---
-
-DROP TABLE IF EXISTS `dede_memberstow`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_memberstow` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL DEFAULT '0',
-  `arcid` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(60) NOT NULL DEFAULT '',
-  `addtime` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_memberstow`
---
-
-LOCK TABLES `dede_memberstow` WRITE;
-/*!40000 ALTER TABLE `dede_memberstow` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_memberstow` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_moneyrecord`
---
-
-DROP TABLE IF EXISTS `dede_moneyrecord`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_moneyrecord` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `aid` int(11) NOT NULL DEFAULT '0',
-  `uid` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(60) NOT NULL DEFAULT '',
-  `money` int(11) NOT NULL DEFAULT '0',
-  `dtime` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_moneyrecord`
---
-
-LOCK TABLES `dede_moneyrecord` WRITE;
-/*!40000 ALTER TABLE `dede_moneyrecord` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_moneyrecord` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_myad`
---
-
-DROP TABLE IF EXISTS `dede_myad`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_myad` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `tagname` varchar(30) NOT NULL DEFAULT '',
-  `adname` varchar(100) NOT NULL DEFAULT '',
-  `timeset` smallint(6) NOT NULL DEFAULT '0',
-  `starttime` int(11) NOT NULL DEFAULT '0',
-  `endtime` int(11) NOT NULL DEFAULT '0',
-  `normbody` text,
-  `expbody` text,
-  PRIMARY KEY (`aid`),
-  KEY `tagname` (`tagname`,`adname`,`typeid`,`timeset`,`endtime`,`starttime`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_myad`
---
-
-LOCK TABLES `dede_myad` WRITE;
-/*!40000 ALTER TABLE `dede_myad` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_myad` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_mynews`
---
-
-DROP TABLE IF EXISTS `dede_mynews`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_mynews` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(60) NOT NULL DEFAULT '',
-  `writer` varchar(50) NOT NULL DEFAULT '',
-  `senddate` int(11) NOT NULL DEFAULT '0',
-  `body` text,
-  PRIMARY KEY (`aid`),
-  KEY `mynewsindex` (`typeid`,`title`,`writer`,`senddate`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_mynews`
---
-
-LOCK TABLES `dede_mynews` WRITE;
-/*!40000 ALTER TABLE `dede_mynews` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_mynews` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_mytag`
---
-
-DROP TABLE IF EXISTS `dede_mytag`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_mytag` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  `tagname` varchar(30) NOT NULL DEFAULT '',
-  `timeset` smallint(6) NOT NULL DEFAULT '0',
-  `starttime` int(11) NOT NULL DEFAULT '0',
-  `endtime` int(11) NOT NULL DEFAULT '0',
-  `normbody` text,
-  `expbody` text,
-  PRIMARY KEY (`aid`),
-  KEY `tagname` (`tagname`,`typeid`,`timeset`,`endtime`,`starttime`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_mytag`
---
-
-LOCK TABLES `dede_mytag` WRITE;
-/*!40000 ALTER TABLE `dede_mytag` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_mytag` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_plus`
---
-
-DROP TABLE IF EXISTS `dede_plus`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_plus` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `plusname` varchar(30) NOT NULL DEFAULT '',
-  `menustring` varchar(150) NOT NULL DEFAULT '',
-  `writer` varchar(60) NOT NULL DEFAULT '',
-  `isshow` smallint(6) NOT NULL DEFAULT '1',
-  `filelist` text,
-  PRIMARY KEY (`aid`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_plus`
---
-
-LOCK TABLES `dede_plus` WRITE;
-/*!40000 ALTER TABLE `dede_plus` DISABLE KEYS */;
-INSERT INTO `dede_plus` VALUES (1,'文件管理器','<m:item name=\'文件管理器\' link=\'file_manage_main.php\' rank=\'plus_文件管理器\' target=\'main\' />','IT柏拉图',1,''),(2,'站内新闻发布','<m:item name=\'站内新闻发布\' link=\'mynews_main.php\' rank=\'plus_站内新闻发布\' target=\'main\' />','IT柏拉图',1,''),(3,'友情链接模块','<m:item name=\'友情链接模块\' link=\'friendlink_main.php\' rank=\'plus_友情链接模块\' target=\'main\' />','IT柏拉图',1,''),(4,'留言簿模块','<m:item name=\'留言簿模块\' link=\'catalog_do.php?dopost=guestbook\' rank=\'plus_留言簿模块\' target=\'main\' />','IT柏拉图',1,''),(5,'投票模块','<m:item name=\'投票模块\' link=\'vote_main.php\' rank=\'plus_投票模块\' target=\'main\' />','IT柏拉图',1,''),(6,'论坛扩展','<m:item name=\'论坛扩展\' link=\'bbs_addons.php\' rank=\'plus_论坛扩展\' target=\'main\' />','IT柏拉图',1,''),(7,'广告管理','<m:item name=\'广告管理\' link=\'ad_main.php\' rank=\'plus_广告管理\' target=\'main\' />','IT柏拉图',1,''),(8,'正则规则测试器','<m:item name=\'正则规则测试器\' link=\'ruletest.php\' rank=\'plus_正则规则测试器\' target=\'main\' />','IT柏拉图',1,'ruletest.php');
-/*!40000 ALTER TABLE `dede_plus` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_search_keywords`
---
-
-DROP TABLE IF EXISTS `dede_search_keywords`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_search_keywords` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `keyword` varchar(50) NOT NULL DEFAULT '',
-  `spwords` varchar(100) NOT NULL DEFAULT '',
-  `count` int(11) NOT NULL DEFAULT '1',
-  `result` int(11) NOT NULL DEFAULT '0',
-  `lasttime` int(11) NOT NULL DEFAULT '0',
-  `istag` smallint(6) NOT NULL DEFAULT '0',
-  `mid` int(11) NOT NULL DEFAULT '0',
-  `channelid` int(11) NOT NULL DEFAULT '0',
-  `typeid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`),
-  KEY `count` (`count`,`result`,`lasttime`,`istag`,`mid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_search_keywords`
---
-
-LOCK TABLES `dede_search_keywords` WRITE;
-/*!40000 ALTER TABLE `dede_search_keywords` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_search_keywords` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_sgpage`
---
-
-DROP TABLE IF EXISTS `dede_sgpage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_sgpage` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(60) NOT NULL DEFAULT '',
-  `ismake` smallint(6) NOT NULL DEFAULT '1',
-  `filename` varchar(150) NOT NULL DEFAULT '',
-  `uptime` int(11) NOT NULL DEFAULT '0',
-  `body` text,
-  PRIMARY KEY (`aid`),
-  KEY `title` (`title`,`ismake`,`filename`,`uptime`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_sgpage`
---
-
-LOCK TABLES `dede_sgpage` WRITE;
-/*!40000 ALTER TABLE `dede_sgpage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_sgpage` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_softconfig`
---
-
-DROP TABLE IF EXISTS `dede_softconfig`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_softconfig` (
-  `downtype` smallint(6) NOT NULL DEFAULT '0',
-  `ismoresite` smallint(6) NOT NULL DEFAULT '0',
-  `gotojump` smallint(6) NOT NULL DEFAULT '0',
-  `sites` text,
-  KEY `downtype` (`downtype`,`ismoresite`,`gotojump`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_softconfig`
---
-
-LOCK TABLES `dede_softconfig` WRITE;
-/*!40000 ALTER TABLE `dede_softconfig` DISABLE KEYS */;
-INSERT INTO `dede_softconfig` VALUES (1,0,1,'');
-/*!40000 ALTER TABLE `dede_softconfig` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_sysconfig`
---
-
-DROP TABLE IF EXISTS `dede_sysconfig`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_sysconfig` (
-  `aid` int(11) NOT NULL DEFAULT '0',
-  `varname` varchar(20) NOT NULL DEFAULT '',
-  `info` varchar(100) NOT NULL DEFAULT '',
-  `value` varchar(250) NOT NULL DEFAULT '',
-  `type` varchar(10) NOT NULL DEFAULT 'string',
-  PRIMARY KEY (`varname`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_sysconfig`
---
-
-LOCK TABLES `dede_sysconfig` WRITE;
-/*!40000 ALTER TABLE `dede_sysconfig` DISABLE KEYS */;
-INSERT INTO `dede_sysconfig` VALUES (1,'cfg_basehost','站点根网址','http://_','string'),(2,'cfg_cmspath','DedeCms安装目录','','string'),(3,'cfg_cookie_encode','cookie加密码','QvNTs6152B','string'),(4,'cfg_indexurl','网页主页链接','/','string'),(5,'cfg_backup_dir','数据备份目录（在管理目录内）','backup_data','string'),(6,'cfg_indexname','主页链接名','主页','string'),(7,'cfg_webname','网站名称','网站管理系统','string'),(8,'cfg_adminemail','网站发信EMAIL','admin@youremail.com','string'),(9,'cfg_html_editor','Html编辑器选项（仅支持 dede 和 fck）','fck','string'),(10,'cfg_arcdir','文档HTML默认保存路径','/html','string'),(11,'cfg_medias_dir','图片/上传文件默认路径','/upimg','string'),(12,'cfg_ddimg_width','缩略图默认宽度','200','string'),(13,'cfg_ddimg_height','缩略图默认高度','150','string'),(14,'cfg_album_width','图集默认显示图片的大小','800','string'),(15,'cfg_imgtype','图片浏览器文件类型','jpg|gif|png','string'),(16,'cfg_softtype','附件浏览器文件类型','exe|zip|gz|rar|iso|doc|xsl|ppt|wps','string'),(17,'cfg_mediatype','多媒体浏览器文件类型','swf|mpg|dat|avi|mp3|rm|rmvb|wmv|asf|vob|wma|wav|mid|mov','string'),(18,'cfg_specnote','专题的最大节点数','6','string'),(19,'cfg_list_symbol','栏目位置的间隔符号','>','string'),(20,'cfg_notallowstr','禁用词语（系统将直接停止用户动作）','法轮|江泽民|走光|偷拍|色情|激情|sex|操B','string'),(21,'cfg_feedbackcheck','评论及留言(是/否)需审核','否','bool'),(22,'cfg_keyword_replace','关键字替换(是/否)使用本功能会影响HTML生成速度','是','bool'),(23,'cfg_fck_xhtml','编辑器(是/否)使用XHTML','否','bool'),(24,'cfg_df_style','模板默认风格','default','string'),(25,'cfg_multi_site','(是/否)支持多站点，开启此项后附件、栏目连接、arclist内容启用绝对网址','否','bool'),(26,'cfg_dede_cache','(是/否)开启Dede模块引擎的缓存功能','否','bool'),(27,'cfg_dede_log','(是/否)开启管理日志','否','bool'),(28,'cfg_powerby','网站版权信息','<a href=\'http://www.dedecms.com\' target=\'_blank\'>Power by DedeCms</a>','string'),(29,'cfg_arcsptitle','(是/否)开启分页标题，开启会影响HTML生成速度','是','bool'),(30,'cfg_arcautosp','(是/否)开启长文章自动分页','否','bool'),(31,'cfg_arcautosp_size','文章自动分页大小（单位: K）','5','string'),(32,'cfg_auot_description','自动摘要长度（0-250，0表示不启用）','250','string'),(33,'cfg_ftp_host','FTP主机','','string'),(34,'cfg_ftp_port','FTP端口','21','string'),(35,'cfg_ftp_user','FTP用户名','','string'),(36,'cfg_ftp_pwd','FTP密码','','string'),(37,'cfg_ftp_root','网站根在FTP中的目录','/','string'),(38,'cfg_ftp_mkdir','是否强制用FTP创建目录','否','bool'),(39,'cfg_feedback_ck','评论加验证码重确认','是','bool'),(40,'cfg_list_son','上级列表是否包含子类内容','是','bool'),(41,'cfg_mb_open','是否开启会员功能','是','bool'),(42,'cfg_mb_album','是否开启会员图集功能','是','bool'),(43,'cfg_mb_upload','是否允许会员上传非图片附件','是','bool'),(44,'cfg_mb_upload_size','会员上传文件大小(K)','1024','string'),(45,'cfg_mb_sendall','是否开放会员对自定义模型投稿','是','bool'),(46,'cfg_mb_rmdown','是否把会员指定的远程文档下载到本地','否','bool'),(47,'cfg_cli_time','客户端与服务器的时间差（正负值均可，如果相同时区不需要校正）','0','string'),(48,'cfg_mb_mediatype','会员附件许可的类型','swf|mpg|mp3|rm|rmvb|wmv|asf|wma|zip|rar|doc|xsl|ppt|wps','string'),(49,'cfg_mb_max','会员附件总大小限制(MB)','20','string'),(20,'cfg_replacestr','替换词语（词语会被替换成***）','她妈|它妈|他妈|你妈|fuck|去死|贱人','string'),(50,'cfg_makeindex','发布文档后自动更新网站主页','否','bool'),(51,'cfg_keyword_like','使用关键词关连文章','否','bool');
-/*!40000 ALTER TABLE `dede_sysconfig` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_uploads`
---
-
-DROP TABLE IF EXISTS `dede_uploads`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_uploads` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL DEFAULT '',
-  `url` varchar(100) NOT NULL DEFAULT '',
-  `mediatype` smallint(6) NOT NULL DEFAULT '1',
-  `width` varchar(10) NOT NULL DEFAULT '',
-  `height` varchar(10) NOT NULL DEFAULT '',
-  `playtime` varchar(10) NOT NULL DEFAULT '',
-  `filesize` int(11) NOT NULL DEFAULT '0',
-  `uptime` int(11) NOT NULL DEFAULT '0',
-  `adminid` int(11) NOT NULL DEFAULT '0',
-  `memberid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`),
-  KEY `memberid` (`memberid`,`filesize`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_uploads`
---
-
-LOCK TABLES `dede_uploads` WRITE;
-/*!40000 ALTER TABLE `dede_uploads` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dede_uploads` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dede_vote`
---
-
-DROP TABLE IF EXISTS `dede_vote`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dede_vote` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `votename` varchar(50) NOT NULL DEFAULT '',
-  `starttime` int(11) NOT NULL DEFAULT '0',
-  `endtime` int(11) NOT NULL DEFAULT '0',
-  `totalcount` int(11) NOT NULL DEFAULT '0',
-  `ismore` smallint(6) NOT NULL DEFAULT '0',
-  `votenote` text,
-  PRIMARY KEY (`aid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dede_vote`
---
-
-LOCK TABLES `dede_vote` WRITE;
-/*!40000 ALTER TABLE `dede_vote` DISABLE KEYS */;
-INSERT INTO `dede_vote` VALUES (1,'你是从哪儿得知本站的？',1150675200,1268956800,1,0,'<v:note id=\'1\' count=\'1\'>朋友介绍</v:note>\r\n<v:note id=\'2\' count=\'0\'>门户网站的搜索引擎</v:note>\r\n<v:note id=\'3\' count=\'0\'>Google或百度搜索</v:note>\r\n<v:note id=\'4\' count=\'0\'>别的网站上的链接</v:note>\r\n<v:note id=\'5\' count=\'0\'>其它途径</v:note>\r\n');
-/*!40000 ALTER TABLE `dede_vote` ENABLE KEYS */;
+LOCK TABLES `J4BD0QGQOX` WRITE;
+/*!40000 ALTER TABLE `J4BD0QGQOX` DISABLE KEYS */;
+INSERT INTO `J4BD0QGQOX` VALUES (1,'c7c7718a29f748d9695e97235a8ca0ec','vWgGHRgDE6ubOGN5pdvsjfKv',0);
+/*!40000 ALTER TABLE `J4BD0QGQOX` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -2016,6 +732,112 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES ('localhost','root','*BD54FDC7D5C09376E5C4A9F9AA875A844757776D','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0),('127.0.0.1','root','*BD54FDC7D5C09376E5C4A9F9AA875A844757776D','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Current Database: `security`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `security` /*!40100 DEFAULT CHARACTER SET gbk */;
+
+USE `security`;
+
+--
+-- Table structure for table `emails`
+--
+
+DROP TABLE IF EXISTS `emails`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `emails` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `email_id` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=gbk;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `emails`
+--
+
+LOCK TABLES `emails` WRITE;
+/*!40000 ALTER TABLE `emails` DISABLE KEYS */;
+INSERT INTO `emails` VALUES (1,'Dumb@dhakkan.com'),(2,'Angel@iloveu.com'),(3,'Dummy@dhakkan.local'),(4,'secure@dhakkan.local'),(5,'stupid@dhakkan.local'),(6,'superman@dhakkan.local'),(7,'batman@dhakkan.local'),(8,'admin@dhakkan.com');
+/*!40000 ALTER TABLE `emails` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `referers`
+--
+
+DROP TABLE IF EXISTS `referers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `referers` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `referer` varchar(256) NOT NULL,
+  `ip_address` varchar(35) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `referers`
+--
+
+LOCK TABLES `referers` WRITE;
+/*!40000 ALTER TABLE `referers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `referers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `uagents`
+--
+
+DROP TABLE IF EXISTS `uagents`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `uagents` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `uagent` varchar(256) NOT NULL,
+  `ip_address` varchar(35) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `uagents`
+--
+
+LOCK TABLES `uagents` WRITE;
+/*!40000 ALTER TABLE `uagents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `uagents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=gbk;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Dumb','Dumb'),(2,'Angelina','I-kill-you'),(3,'Dummy','p@ssword'),(4,'secure','crappy'),(5,'stupid','stupidity'),(6,'superman','genious'),(7,'batman','mob!le'),(8,'admin','admin'),(9,'admin1','admin1'),(10,'admin2','admin2'),(11,'admin3','admin3'),(12,'dhakkan','dumbo'),(14,'admin4','admin4');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -2026,4 +848,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-05 22:39:30
+-- Dump completed on 2019-03-08 13:39:17
