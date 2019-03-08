@@ -1,5 +1,5 @@
-# 老版本织梦cms的docker
-这是使用了织梦CMS（老版）构建的靶场系统
+# SQL注入测试的docker
+这是使用了sqli-labs构建的靶场系统
 ## 框架
 ubuntu+lnmp作为基础框架
 
