@@ -50,6 +50,40 @@ INSERT INTO `J4BD0QGQOX` VALUES (1,'c7c7718a29f748d9695e97235a8ca0ec','vWgGHRgDE
 UNLOCK TABLES;
 
 --
+-- Current Database: `flag`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `flag` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `flag`;
+
+--
+-- Table structure for table `flags`
+--
+
+DROP TABLE IF EXISTS `flags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `flags` (
+  `id` int(11) NOT NULL,
+  `flag` text NOT NULL,
+  `trueorflase` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `flags`
+--
+
+LOCK TABLES `flags` WRITE;
+/*!40000 ALTER TABLE `flags` DISABLE KEYS */;
+INSERT INTO `flags` VALUES (0,'flag{9a554fdc9a7b09d64a540b5e5a942c1e}',1),(1,'flag{ddcc1299f608ba31b5d376316057d21b}',0);
+/*!40000 ALTER TABLE `flags` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Current Database: `mysql`
 --
 
@@ -848,4 +882,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-08 13:39:17
+-- Dump completed on 2019-03-13 18:22:20
